@@ -21,7 +21,19 @@ function App() {
       </nav>
 
 
-      <div className='h-full w-[85%] bg-red-100'>
+      <div className='w-[85%] p-10 pt-[5%] flex flex-wrap overflow-x-hidden overflow-y-auto'>
+
+
+        <div className='card w-[18%] h-[30vh] mr-3 mb-3 p-3 border shadow rounded flex flex-col justify-center items-center'>
+          <div className='w-full h-[80%] mb-3 bg-contain bg-no-repeat bg-center hover:scale-110'
+            style={{backgroundImage: 
+              "url(https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png)",
+            }}
+          ></div>
+          <h1 className='hover:text-blue-400'>Lorem ipsum dolor sit amet.</h1>
+        </div>
+
+       
 
       </div>
     </div>
