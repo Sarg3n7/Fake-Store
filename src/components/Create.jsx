@@ -1,30 +1,48 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { ProductContext } from "../utils/Context";
+import { nanoid } from "nanoid";
+import { useNavigate } from "react-router-dom";
 
 function Create() {
+  const navigate = useNavigate()
+  const [products, setProducts] = useContext(ProductContext);
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
 
-  const AddProduct = (e)=>{
+  const AddProduct = (e) => {
     e.preventDefault();
-    const product = {
-        title,
-        image,
-        category,
-        price,
-        description,
+
+    if (
+      title.trim().length < 5 ||
+      image.trim().length < 5 ||
+      category.trim().length < 5 ||
+      price.trim().length < 1 ||
+      description.trim().length < 5
+    ) {
+      alert("Every field must have atleast 4 characters");
+      return;
     }
-    console.log(product);
-    
-  }
-
-
-
+    const product = {
+      id: nanoid(),
+      title,
+      image,
+      category,
+      price,
+      description,
+    };
+    setProducts([...products, product]);
+    localStorage.setItem("products", JSON.stringify([...products, product]))
+    navigate('/')
+  };
 
   return (
-    <form onSubmit={AddProduct} className="flex flex-col items-center p-[5%] w-screen h-screen">
+    <form
+      onSubmit={AddProduct}
+      className="flex flex-col items-center p-[5%] w-screen h-screen"
+    >
       <h1 className="text-3xl mb-5 w-1/2 mb-5">Add New Product</h1>
       <input
         type="url"
@@ -64,11 +82,10 @@ function Create() {
         rows="10"
       ></textarea>
       <div className="w-1/2">
-      <button className="px-5 py-2 border rounded border-blue-200 text-blue-300">
-        Add New Product
-      </button>
+        <button className="px-5 py-2 border rounded border-blue-200 text-blue-300">
+          Add New Product
+        </button>
       </div>
-      
     </form>
   );
 }
