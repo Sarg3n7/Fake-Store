@@ -28,7 +28,13 @@ function Home() {
 
   useEffect(()=>{
     if (!filteredProducts || category == 'undefined') setFilteredProducts(products)
-    if (category != "undefined") getProductscategory();
+    if (category != "undefined") {
+
+      // getProductscategory()
+      setFilteredProducts(products.filter (p=> p.category == category))
+
+
+    };
   },[category, products]);
 
   
