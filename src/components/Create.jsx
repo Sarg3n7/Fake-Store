@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { ProductContext } from "../utils/Context";
 import { nanoid } from "nanoid";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Create() {
   const navigate = useNavigate()
@@ -35,6 +36,7 @@ function Create() {
     };
     setProducts([...products, product]);
     localStorage.setItem("products", JSON.stringify([...products, product]))
+    toast.success("Product Added Successfully")
     navigate('/')
   };
 
@@ -43,7 +45,7 @@ function Create() {
       onSubmit={AddProduct}
       className="flex flex-col items-center p-[5%] w-screen h-screen"
     >
-      <h1 className="text-3xl mb-5 w-1/2 mb-5">Add New Product</h1>
+      <h1 className="text-3xl mb-5 w-1/2">Add New Product</h1>
       <input
         type="url"
         placeholder="Image Link"
