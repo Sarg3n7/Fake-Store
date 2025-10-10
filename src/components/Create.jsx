@@ -49,14 +49,14 @@ function Create() {
       <input
         type="url"
         placeholder="Image Link"
-        className="text-1xl bg-zinc-100 rounded p-3 w-1/2 mb-3"
+        className="text-1xl bg-zinc-100 text-gray-800 rounded p-3 w-1/2 mb-3 border border-gray-300"
         onChange={(e) => setImage(e.target.value)}
         value={image}
       />
       <input
         type="text"
         placeholder="Title"
-        className="text-1xl bg-zinc-100 rounded p-3 w-1/2 mb-3"
+        className="text-1xl bg-zinc-100 text-gray-800 rounded p-3 w-1/2 mb-3 border border-gray-300"
         onChange={(e) => setTitle(e.target.value)}
         value={title}
       />
@@ -64,14 +64,14 @@ function Create() {
         <input
           type="text"
           placeholder="category"
-          className="text-1xl bg-zinc-100 rounded p-3 w-[48%] mb-3"
+          className="text-1xl bg-zinc-100 text-gray-800 rounded p-3 w-[48%] mb-3 border border-gray-300"
           onChange={(e) => setCategory(e.target.value)}
           value={category}
         />
         <input
           type="number"
           placeholder="price"
-          className="text-1xl bg-zinc-100 rounded p-3 w-[48%] mb-3"
+          className="text-1xl bg-zinc-100 text-gray-800 rounded p-3 w-[48%] mb-3 border border-gray-300"
           onChange={(e) => setPrice(e.target.value)}
           value={price}
         />
@@ -80,11 +80,11 @@ function Create() {
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Enter Product Description Here"
         value={description}
-        className="text-1xl bg-zinc-100 rounded p-3 w-1/2 mb-3"
+        className="text-1xl bg-zinc-100 text-gray-800 rounded p-3 w-1/2 mb-3 border border-gray-300"
         rows="10"
       ></textarea>
       <div className="w-1/2">
-        <button className="px-5 py-2 border rounded border-blue-200 text-blue-300">
+        <button className="px-5 py-2 border rounded border-blue-200 text-white bg-blue-400">
           Add New Product
         </button>
       </div>
