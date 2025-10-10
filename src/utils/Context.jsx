@@ -82,7 +82,7 @@
 // ✅ UPDATED FILE: Context.jsx
 
 import React, { createContext, useEffect, useState } from "react";
-import axios from "./axios";
+import axios from "./Axios";
 
 export const ProductContext = createContext();
 export const ThemeContext = createContext();
