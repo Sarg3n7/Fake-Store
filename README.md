@@ -82,14 +82,7 @@ Fake Store/
 
 ---
 
-## 🌐 Live Link
 
-You can check out the live version of the app here:  
-👉 [**Fake Store Live Demo**](https://your-live-link-here.com)
-
-*(Replace the above link once deployed on platforms like Vercel, Netlify, or GitHub Pages.)*
-
----
 
 ## 💡 Future Enhancements
 
